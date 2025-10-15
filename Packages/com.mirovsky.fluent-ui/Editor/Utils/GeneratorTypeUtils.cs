@@ -365,6 +365,7 @@ namespace FluentUI.Generator
         {
             return type
                 .GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
+                .Where(m => m.GetParameters().Length > 0)
                 .Where(m => m.ReturnType == typeof(void))
                 .Where(m => !m.IsAbstract)
                 .Where(m => !m.IsVirtual || m.GetBaseDefinition().DeclaringType != m.DeclaringType)

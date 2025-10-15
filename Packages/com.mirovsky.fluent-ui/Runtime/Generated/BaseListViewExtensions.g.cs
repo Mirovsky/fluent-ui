@@ -5,286 +5,286 @@ namespace FluentUI
     using System;
     using System.Collections.Generic;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIBaseListViewExtensions
     {
         public static TVisualElement ViewController<TVisualElement>(this TVisualElement t, CollectionViewController controller) where TVisualElement : BaseListView
         {
             t.SetViewController(controller);
-            
+
             return t;
         }
-        
+
         public static TVisualElement ShowBoundCollectionSize<TVisualElement>(this TVisualElement t, Boolean showBoundCollectionSize) where TVisualElement : BaseListView
         {
             t.showBoundCollectionSize = showBoundCollectionSize;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindShowBoundCollectionSize<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.showBoundCollectionSize, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement ShowFoldoutHeader<TVisualElement>(this TVisualElement t, Boolean showFoldoutHeader) where TVisualElement : BaseListView
         {
             t.showFoldoutHeader = showFoldoutHeader;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindShowFoldoutHeader<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.showFoldoutHeader, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement HeaderTitle<TVisualElement>(this TVisualElement t, String headerTitle) where TVisualElement : BaseListView
         {
             t.headerTitle = headerTitle;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindHeaderTitle<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.headerTitle, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement MakeHeader<TVisualElement>(this TVisualElement t, Func<VisualElement> makeHeader) where TVisualElement : BaseListView
         {
             t.makeHeader = makeHeader;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindMakeHeader<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.makeHeader, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement MakeFooter<TVisualElement>(this TVisualElement t, Func<VisualElement> makeFooter) where TVisualElement : BaseListView
         {
             t.makeFooter = makeFooter;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindMakeFooter<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.makeFooter, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement ShowAddRemoveFooter<TVisualElement>(this TVisualElement t, Boolean showAddRemoveFooter) where TVisualElement : BaseListView
         {
             t.showAddRemoveFooter = showAddRemoveFooter;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindShowAddRemoveFooter<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.showAddRemoveFooter, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindingSourceSelectionMode<TVisualElement>(this TVisualElement t, BindingSourceSelectionMode bindingSourceSelectionMode) where TVisualElement : BaseListView
         {
             t.bindingSourceSelectionMode = bindingSourceSelectionMode;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindBindingSourceSelectionMode<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.bindingSourceSelectionMode, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement ReorderMode<TVisualElement>(this TVisualElement t, ListViewReorderMode reorderMode) where TVisualElement : BaseListView
         {
             t.reorderMode = reorderMode;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindReorderMode<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.reorderMode, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement MakeNoneElement<TVisualElement>(this TVisualElement t, Func<VisualElement> makeNoneElement) where TVisualElement : BaseListView
         {
             t.makeNoneElement = makeNoneElement;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindMakeNoneElement<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.makeNoneElement, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement AllowAdd<TVisualElement>(this TVisualElement t, Boolean allowAdd) where TVisualElement : BaseListView
         {
             t.allowAdd = allowAdd;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindAllowAdd<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.allowAdd, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement OverridingAddButtonBehavior<TVisualElement>(this TVisualElement t, Action<BaseListView, Button> overridingAddButtonBehavior) where TVisualElement : BaseListView
         {
             t.overridingAddButtonBehavior = overridingAddButtonBehavior;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindOverridingAddButtonBehavior<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.overridingAddButtonBehavior, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement OnAdd<TVisualElement>(this TVisualElement t, Action<BaseListView> onAdd) where TVisualElement : BaseListView
         {
             t.onAdd = onAdd;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindOnAdd<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.onAdd, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement AllowRemove<TVisualElement>(this TVisualElement t, Boolean allowRemove) where TVisualElement : BaseListView
         {
             t.allowRemove = allowRemove;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindAllowRemove<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.allowRemove, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement OnRemove<TVisualElement>(this TVisualElement t, Action<BaseListView> onRemove) where TVisualElement : BaseListView
         {
             t.onRemove = onRemove;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindOnRemove<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseListView
         {
             t.SetBinding(Properties.onRemove, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement ItemsAdded<TVisualElement>(this TVisualElement t, Action<IEnumerable<Int32>> itemsAdded) where TVisualElement : BaseListView
         {
             t.itemsAdded += itemsAdded;
-            
+
             return t;
         }
-        
+
         public static TVisualElement ItemsRemoved<TVisualElement>(this TVisualElement t, Action<IEnumerable<Int32>> itemsRemoved) where TVisualElement : BaseListView
         {
             t.itemsRemoved += itemsRemoved;
-            
+
             return t;
         }
-        
+
         public static TVisualElement ItemsChosen<TVisualElement>(this TVisualElement t, Action<IEnumerable<System.Object>> itemsChosen) where TVisualElement : BaseListView
         {
             t.itemsChosen += itemsChosen;
-            
+
             return t;
         }
-        
+
         public static TVisualElement SelectionChanged<TVisualElement>(this TVisualElement t, Action<IEnumerable<System.Object>> selectionChanged) where TVisualElement : BaseListView
         {
             t.selectionChanged += selectionChanged;
-            
+
             return t;
         }
-        
+
         public static TVisualElement SelectedIndicesChanged<TVisualElement>(this TVisualElement t, Action<IEnumerable<Int32>> selectedIndicesChanged) where TVisualElement : BaseListView
         {
             t.selectedIndicesChanged += selectedIndicesChanged;
-            
+
             return t;
         }
-        
+
         public static TVisualElement ItemIndexChanged<TVisualElement>(this TVisualElement t, Action<Int32, Int32> itemIndexChanged) where TVisualElement : BaseListView
         {
             t.itemIndexChanged += itemIndexChanged;
-            
+
             return t;
         }
-        
+
         public static TVisualElement ItemsSourceChanged<TVisualElement>(this TVisualElement t, Action itemsSourceChanged) where TVisualElement : BaseListView
         {
             t.itemsSourceChanged += itemsSourceChanged;
-            
+
             return t;
         }
-        
+
         public static TVisualElement CanStartDrag<TVisualElement>(this TVisualElement t, Func<CanStartDragArgs, Boolean> canStartDrag) where TVisualElement : BaseListView
         {
             t.canStartDrag += canStartDrag;
-            
+
             return t;
         }
-        
+
         public static TVisualElement SetupDragAndDrop<TVisualElement>(this TVisualElement t, Func<SetupDragAndDropArgs, StartDragArgs> setupDragAndDrop) where TVisualElement : BaseListView
         {
             t.setupDragAndDrop += setupDragAndDrop;
-            
+
             return t;
         }
-        
+
         public static TVisualElement DragAndDropUpdate<TVisualElement>(this TVisualElement t, Func<HandleDragAndDropArgs, DragVisualMode> dragAndDropUpdate) where TVisualElement : BaseListView
         {
             t.dragAndDropUpdate += dragAndDropUpdate;
-            
+
             return t;
         }
-        
+
         public static TVisualElement HandleDrop<TVisualElement>(this TVisualElement t, Func<HandleDragAndDropArgs, DragVisualMode> handleDrop) where TVisualElement : BaseListView
         {
             t.handleDrop += handleDrop;
-            
+
             return t;
         }
     }

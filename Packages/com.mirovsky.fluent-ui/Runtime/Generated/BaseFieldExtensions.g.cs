@@ -4,35 +4,34 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIBaseFieldExtensions
     {
-        
         public static TVisualElement Label<TVisualElement, TValueType>(this TVisualElement t, String label) where TVisualElement : BaseField<TValueType>
         {
             t.label = label;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindLabel<TVisualElement, TValueType>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseField<TValueType>
         {
             t.SetBinding(Properties.label, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement ShowMixedValue<TVisualElement, TValueType>(this TVisualElement t, Boolean showMixedValue) where TVisualElement : BaseField<TValueType>
         {
             t.showMixedValue = showMixedValue;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindShowMixedValue<TVisualElement, TValueType>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseField<TValueType>
         {
             t.SetBinding(Properties.showMixedValue, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
     }

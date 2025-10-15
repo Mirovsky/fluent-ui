@@ -5,21 +5,20 @@ namespace FluentUI
     using System;
     using UnityEngine;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIRectIntFieldExtensions
     {
-        
         public static TVisualElement Value<TVisualElement>(this TVisualElement t, RectInt value) where TVisualElement : RectIntField
         {
             t.value = value;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : RectIntField
         {
             t.SetBinding(Properties.value, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
     }

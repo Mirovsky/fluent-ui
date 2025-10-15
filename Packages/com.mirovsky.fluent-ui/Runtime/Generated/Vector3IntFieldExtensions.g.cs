@@ -5,21 +5,20 @@ namespace FluentUI
     using System;
     using UnityEngine;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIVector3IntFieldExtensions
     {
-        
         public static TVisualElement Value<TVisualElement>(this TVisualElement t, Vector3Int value) where TVisualElement : Vector3IntField
         {
             t.value = value;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : Vector3IntField
         {
             t.SetBinding(Properties.value, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
     }

@@ -4,27 +4,27 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIPopupFieldExtensions
     {
         public static TVisualElement ValueWithoutNotify<TVisualElement, T>(this TVisualElement t, T newValue) where TVisualElement : PopupField<T>
         {
             t.SetValueWithoutNotify(newValue);
-            
+
             return t;
         }
-        
+
         public static TVisualElement Index<TVisualElement, T>(this TVisualElement t, Int32 index) where TVisualElement : PopupField<T>
         {
             t.index = index;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindIndex<TVisualElement, T>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : PopupField<T>
         {
             t.SetBinding(Properties.index, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
     }

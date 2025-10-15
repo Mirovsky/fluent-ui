@@ -4,14 +4,13 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIManipulatorExtensions
     {
-        
         public static TVisualElement Target<TVisualElement>(this TVisualElement t, VisualElement target) where TVisualElement : Manipulator
         {
             t.target = target;
-            
+
             return t;
         }
     }

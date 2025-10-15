@@ -4,35 +4,34 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIButtonExtensions
     {
-        
         public static TVisualElement Clickable<TVisualElement>(this TVisualElement t, Clickable clickable) where TVisualElement : Button
         {
             t.clickable = clickable;
-            
+
             return t;
         }
-        
+
         public static TVisualElement IconImage<TVisualElement>(this TVisualElement t, Background iconImage) where TVisualElement : Button
         {
             t.iconImage = iconImage;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindIconImage<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : Button
         {
             t.SetBinding(Properties.iconImage, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement Clicked<TVisualElement>(this TVisualElement t, Action clicked) where TVisualElement : Button
         {
             t.clicked += clicked;
-            
+
             return t;
         }
     }

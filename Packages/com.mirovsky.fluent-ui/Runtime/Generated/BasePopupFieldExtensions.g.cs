@@ -4,13 +4,13 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIBasePopupFieldExtensions
     {
         public static TVisualElement ValueWithoutNotify<TVisualElement, TValueType, TValueChoice>(this TVisualElement t, TValueType newValue) where TVisualElement : BasePopupField<TValueType, TValueChoice>
         {
             t.SetValueWithoutNotify(newValue);
-            
+
             return t;
         }
     }
