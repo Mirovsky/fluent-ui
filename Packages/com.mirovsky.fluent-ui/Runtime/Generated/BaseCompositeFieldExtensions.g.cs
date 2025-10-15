@@ -4,13 +4,13 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIBaseCompositeFieldExtensions
     {
         public static TVisualElement ValueWithoutNotify<TVisualElement, TValueType, TField, TFieldValue>(this TVisualElement t, TValueType newValue) where TVisualElement : BaseCompositeField<TValueType, TField, TFieldValue> where TField : TextValueField<TFieldValue>, new()
         {
             t.SetValueWithoutNotify(newValue);
-            
+
             return t;
         }
     }

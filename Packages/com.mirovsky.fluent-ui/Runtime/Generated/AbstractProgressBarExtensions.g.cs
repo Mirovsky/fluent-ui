@@ -4,63 +4,62 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIAbstractProgressBarExtensions
     {
-        
         public static TVisualElement Title<TVisualElement>(this TVisualElement t, String title) where TVisualElement : AbstractProgressBar
         {
             t.title = title;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindTitle<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : AbstractProgressBar
         {
             t.SetBinding(Properties.title, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement LowValue<TVisualElement>(this TVisualElement t, Single lowValue) where TVisualElement : AbstractProgressBar
         {
             t.lowValue = lowValue;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindLowValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : AbstractProgressBar
         {
             t.SetBinding(Properties.lowValue, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement HighValue<TVisualElement>(this TVisualElement t, Single highValue) where TVisualElement : AbstractProgressBar
         {
             t.highValue = highValue;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindHighValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : AbstractProgressBar
         {
             t.SetBinding(Properties.highValue, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement Value<TVisualElement>(this TVisualElement t, Single value) where TVisualElement : AbstractProgressBar
         {
             t.value = value;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : AbstractProgressBar
         {
             t.SetBinding(Properties.value, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
     }

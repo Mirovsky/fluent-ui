@@ -5,111 +5,111 @@ namespace FluentUI
     using System;
     using System.Collections.Generic;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIMultiColumnTreeViewExtensions
     {
         public static TVisualElement ViewController<TVisualElement>(this TVisualElement t, CollectionViewController controller) where TVisualElement : MultiColumnTreeView
         {
             t.SetViewController(controller);
-            
+
             return t;
         }
-        
+
         public static TVisualElement SortingMode<TVisualElement>(this TVisualElement t, ColumnSortingMode sortingMode) where TVisualElement : MultiColumnTreeView
         {
             t.sortingMode = sortingMode;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindSortingMode<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : MultiColumnTreeView
         {
             t.SetBinding(Properties.sortingMode, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
-        
+
         public static TVisualElement ColumnSortingChanged<TVisualElement>(this TVisualElement t, Action columnSortingChanged) where TVisualElement : MultiColumnTreeView
         {
             t.columnSortingChanged += columnSortingChanged;
-            
+
             return t;
         }
-        
+
         public static TVisualElement HeaderContextMenuPopulateEvent<TVisualElement>(this TVisualElement t, Action<ContextualMenuPopulateEvent, Column> headerContextMenuPopulateEvent) where TVisualElement : MultiColumnTreeView
         {
             t.headerContextMenuPopulateEvent += headerContextMenuPopulateEvent;
-            
+
             return t;
         }
-        
+
         public static TVisualElement ItemExpandedChanged<TVisualElement>(this TVisualElement t, Action<TreeViewExpansionChangedArgs> itemExpandedChanged) where TVisualElement : MultiColumnTreeView
         {
             t.itemExpandedChanged += itemExpandedChanged;
-            
+
             return t;
         }
-        
+
         public static TVisualElement ItemsChosen<TVisualElement>(this TVisualElement t, Action<IEnumerable<System.Object>> itemsChosen) where TVisualElement : MultiColumnTreeView
         {
             t.itemsChosen += itemsChosen;
-            
+
             return t;
         }
-        
+
         public static TVisualElement SelectionChanged<TVisualElement>(this TVisualElement t, Action<IEnumerable<System.Object>> selectionChanged) where TVisualElement : MultiColumnTreeView
         {
             t.selectionChanged += selectionChanged;
-            
+
             return t;
         }
-        
+
         public static TVisualElement SelectedIndicesChanged<TVisualElement>(this TVisualElement t, Action<IEnumerable<Int32>> selectedIndicesChanged) where TVisualElement : MultiColumnTreeView
         {
             t.selectedIndicesChanged += selectedIndicesChanged;
-            
+
             return t;
         }
-        
+
         public static TVisualElement ItemIndexChanged<TVisualElement>(this TVisualElement t, Action<Int32, Int32> itemIndexChanged) where TVisualElement : MultiColumnTreeView
         {
             t.itemIndexChanged += itemIndexChanged;
-            
+
             return t;
         }
-        
+
         public static TVisualElement ItemsSourceChanged<TVisualElement>(this TVisualElement t, Action itemsSourceChanged) where TVisualElement : MultiColumnTreeView
         {
             t.itemsSourceChanged += itemsSourceChanged;
-            
+
             return t;
         }
-        
+
         public static TVisualElement CanStartDrag<TVisualElement>(this TVisualElement t, Func<CanStartDragArgs, Boolean> canStartDrag) where TVisualElement : MultiColumnTreeView
         {
             t.canStartDrag += canStartDrag;
-            
+
             return t;
         }
-        
+
         public static TVisualElement SetupDragAndDrop<TVisualElement>(this TVisualElement t, Func<SetupDragAndDropArgs, StartDragArgs> setupDragAndDrop) where TVisualElement : MultiColumnTreeView
         {
             t.setupDragAndDrop += setupDragAndDrop;
-            
+
             return t;
         }
-        
+
         public static TVisualElement DragAndDropUpdate<TVisualElement>(this TVisualElement t, Func<HandleDragAndDropArgs, DragVisualMode> dragAndDropUpdate) where TVisualElement : MultiColumnTreeView
         {
             t.dragAndDropUpdate += dragAndDropUpdate;
-            
+
             return t;
         }
-        
+
         public static TVisualElement HandleDrop<TVisualElement>(this TVisualElement t, Func<HandleDragAndDropArgs, DragVisualMode> handleDrop) where TVisualElement : MultiColumnTreeView
         {
             t.handleDrop += handleDrop;
-            
+
             return t;
         }
     }

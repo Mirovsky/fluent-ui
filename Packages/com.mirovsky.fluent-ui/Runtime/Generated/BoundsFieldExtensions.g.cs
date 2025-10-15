@@ -5,27 +5,27 @@ namespace FluentUI
     using System;
     using UnityEngine;
     using UnityEngine.UIElements;
-    
+
     public static class FluentUIBoundsFieldExtensions
     {
         public static TVisualElement ValueWithoutNotify<TVisualElement>(this TVisualElement t, Bounds newValue) where TVisualElement : BoundsField
         {
             t.SetValueWithoutNotify(newValue);
-            
+
             return t;
         }
-        
+
         public static TVisualElement Value<TVisualElement>(this TVisualElement t, Bounds value) where TVisualElement : BoundsField
         {
             t.value = value;
-            
+
             return t;
         }
-        
+
         public static TVisualElement BindValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BoundsField
         {
             t.SetBinding(Properties.value, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-            
+
             return t;
         }
     }
