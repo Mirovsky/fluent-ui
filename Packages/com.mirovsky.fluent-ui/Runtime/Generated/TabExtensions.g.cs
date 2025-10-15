@@ -4,70 +4,70 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUITabExtensions
     {
-
+        
         public static TVisualElement Label<TVisualElement>(this TVisualElement t, String label) where TVisualElement : Tab
         {
             t.label = label;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindLabel<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : Tab
         {
             t.SetBinding(Properties.label, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement IconImage<TVisualElement>(this TVisualElement t, Background iconImage) where TVisualElement : Tab
         {
             t.iconImage = iconImage;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindIconImage<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : Tab
         {
             t.SetBinding(Properties.iconImage, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement Closeable<TVisualElement>(this TVisualElement t, Boolean closeable) where TVisualElement : Tab
         {
             t.closeable = closeable;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindCloseable<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : Tab
         {
             t.SetBinding(Properties.closeable, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement Selected<TVisualElement>(this TVisualElement t, Action<Tab> selected) where TVisualElement : Tab
         {
             t.selected += selected;
-
+            
             return t;
         }
-
+        
         public static TVisualElement Closing<TVisualElement>(this TVisualElement t, Func<Boolean> closing) where TVisualElement : Tab
         {
             t.closing += closing;
-
+            
             return t;
         }
-
+        
         public static TVisualElement Closed<TVisualElement>(this TVisualElement t, Action<Tab> closed) where TVisualElement : Tab
         {
             t.closed += closed;
-
+            
             return t;
         }
     }

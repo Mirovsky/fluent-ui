@@ -5,48 +5,48 @@ namespace FluentUI
     using System;
     using Unity.Properties;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUIDataBindingExtensions
     {
         public static TVisualElement ApplyConverterGroupToSource<TVisualElement>(this TVisualElement t, ConverterGroup group) where TVisualElement : DataBinding
         {
             t.ApplyConverterGroupToSource(group);
-
+            
             return t;
         }
-
+        
         public static TVisualElement ApplyConverterGroupToUI<TVisualElement>(this TVisualElement t, ConverterGroup group) where TVisualElement : DataBinding
         {
             t.ApplyConverterGroupToUI(group);
-
+            
             return t;
         }
-
+        
         public static TVisualElement DataSource<TVisualElement>(this TVisualElement t, System.Object dataSource) where TVisualElement : DataBinding
         {
             t.dataSource = dataSource;
-
+            
             return t;
         }
-
+        
         public static TVisualElement DataSourceType<TVisualElement>(this TVisualElement t, Type dataSourceType) where TVisualElement : DataBinding
         {
             t.dataSourceType = dataSourceType;
-
+            
             return t;
         }
-
+        
         public static TVisualElement DataSourcePath<TVisualElement>(this TVisualElement t, PropertyPath dataSourcePath) where TVisualElement : DataBinding
         {
             t.dataSourcePath = dataSourcePath;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindingMode<TVisualElement>(this TVisualElement t, BindingMode bindingMode) where TVisualElement : DataBinding
         {
             t.bindingMode = bindingMode;
-
+            
             return t;
         }
     }

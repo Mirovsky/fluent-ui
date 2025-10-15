@@ -4,55 +4,55 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUIBaseBoolFieldExtensions
     {
         public static TVisualElement ValueWithoutNotify<TVisualElement>(this TVisualElement t, Boolean newValue) where TVisualElement : BaseBoolField
         {
             t.SetValueWithoutNotify(newValue);
-
+            
             return t;
         }
-
+        
         public static TVisualElement ToggleOnLabelClick<TVisualElement>(this TVisualElement t, Boolean toggleOnLabelClick) where TVisualElement : BaseBoolField
         {
             t.toggleOnLabelClick = toggleOnLabelClick;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindToggleOnLabelClick<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseBoolField
         {
             t.SetBinding(Properties.toggleOnLabelClick, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement Text<TVisualElement>(this TVisualElement t, String text) where TVisualElement : BaseBoolField
         {
             t.text = text;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindText<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseBoolField
         {
             t.SetBinding(Properties.text, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement Value<TVisualElement>(this TVisualElement t, Boolean value) where TVisualElement : BaseBoolField
         {
             t.value = value;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : BaseBoolField
         {
             t.SetBinding(Properties.value, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
     }

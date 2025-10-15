@@ -55,7 +55,7 @@ namespace FluentUI.Generator
                 }
             }
 
-            if (_classBuilder.Properties.Count > 0)
+            if (_classBuilder.Methods.Count > 0 && _classBuilder.Properties.Count > 0)
             {
                 _writer.WriteLine();
             }

@@ -5,13 +5,27 @@ namespace FluentUI
     using System;
     using UnityEngine;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUIUnsignedIntegerFieldExtensions
     {
         public static TVisualElement ApplyInputDeviceDelta<TVisualElement>(this TVisualElement t, Vector3 delta, DeltaSpeed speed, UInt32 startValue) where TVisualElement : UnsignedIntegerField
         {
             t.ApplyInputDeviceDelta(delta, speed, startValue);
-
+            
+            return t;
+        }
+        
+        public static TVisualElement Value<TVisualElement>(this TVisualElement t, UInt32 value) where TVisualElement : UnsignedIntegerField
+        {
+            t.value = value;
+            
+            return t;
+        }
+        
+        public static TVisualElement BindValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : UnsignedIntegerField
+        {
+            t.SetBinding(Properties.value, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
+            
             return t;
         }
     }

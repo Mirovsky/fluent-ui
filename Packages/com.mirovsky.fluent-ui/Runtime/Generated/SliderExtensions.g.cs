@@ -5,41 +5,55 @@ namespace FluentUI
     using System;
     using UnityEngine;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUISliderExtensions
     {
         public static TVisualElement ApplyInputDeviceDelta<TVisualElement>(this TVisualElement t, Vector3 delta, DeltaSpeed speed, Single startValue) where TVisualElement : Slider
         {
             t.ApplyInputDeviceDelta(delta, speed, startValue);
-
+            
             return t;
         }
-
+        
         public static TVisualElement LowValue<TVisualElement>(this TVisualElement t, Single lowValue) where TVisualElement : Slider
         {
             t.lowValue = lowValue;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindLowValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : Slider
         {
             t.SetBinding(Properties.lowValue, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement HighValue<TVisualElement>(this TVisualElement t, Single highValue) where TVisualElement : Slider
         {
             t.highValue = highValue;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindHighValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : Slider
         {
             t.SetBinding(Properties.highValue, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
+            return t;
+        }
+        
+        public static TVisualElement Value<TVisualElement>(this TVisualElement t, Single value) where TVisualElement : Slider
+        {
+            t.value = value;
+            
+            return t;
+        }
+        
+        public static TVisualElement BindValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : Slider
+        {
+            t.SetBinding(Properties.value, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
+            
             return t;
         }
     }
