@@ -89,7 +89,7 @@ namespace FluentUI.Generator
 
             var writer = new ClassWriter(builder, propertiesBuilder);
 
-            string path = Path.GetFullPath("Packages/com.mirovsky.fluent-ui-toolkit/Runtime/Generated");
+            string path = Path.GetFullPath("Packages/com.mirovsky.fluent-ui/Runtime/Generated");
             File.WriteAllText(
                 Path.Combine(path, $"{GeneratorTypeUtils.GetSafeNonGenericName(type)}Extensions.g.cs"),
                 writer.Write()
@@ -126,7 +126,7 @@ namespace FluentUI.Generator
 
             var writer = new ClassWriter(builder, propertiesBuilder);
 
-            string path = Path.GetFullPath("Packages/com.mirovsky.fluent-ui-toolkit/Runtime/Generated");
+            string path = Path.GetFullPath("Packages/com.mirovsky.fluent-ui/Runtime/Generated");
             File.WriteAllText(
                 Path.Combine(path, "StyleVisualElementExtensions.g.cs"),
                 writer.Write()
@@ -137,7 +137,7 @@ namespace FluentUI.Generator
         {
             var writer = new PropertiesWriter(propertiesBuilder);
 
-            string path = Path.GetFullPath("Packages/com.mirovsky.fluent-ui-toolkit/Runtime/Generated");
+            string path = Path.GetFullPath("Packages/com.mirovsky.fluent-ui/Runtime/Generated");
             File.WriteAllText(
                 Path.Combine(path, "Properties.g.cs"),
                 writer.Write()

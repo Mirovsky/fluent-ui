@@ -4,13 +4,13 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUIRepeatButtonExtensions
     {
         public static TVisualElement Action<TVisualElement>(this TVisualElement t, Action clickEvent, Int64 delay, Int64 interval) where TVisualElement : RepeatButton
         {
             t.SetAction(clickEvent, delay, interval);
-
+            
             return t;
         }
     }

@@ -4,49 +4,49 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUIFoldoutExtensions
     {
-
+        
         public static TVisualElement ToggleOnLabelClick<TVisualElement>(this TVisualElement t, Boolean toggleOnLabelClick) where TVisualElement : Foldout
         {
             t.toggleOnLabelClick = toggleOnLabelClick;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindToggleOnLabelClick<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : Foldout
         {
             t.SetBinding(Properties.toggleOnLabelClick, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement Text<TVisualElement>(this TVisualElement t, String text) where TVisualElement : Foldout
         {
             t.text = text;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindText<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : Foldout
         {
             t.SetBinding(Properties.text, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement Value<TVisualElement>(this TVisualElement t, Boolean value) where TVisualElement : Foldout
         {
             t.value = value;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : Foldout
         {
             t.SetBinding(Properties.value, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
     }

@@ -5,147 +5,147 @@ namespace FluentUI
     using System;
     using System.Collections.Generic;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUITreeViewExtensions
     {
-
+        
         public static TVisualElement MakeItem<TVisualElement>(this TVisualElement t, Func<VisualElement> makeItem) where TVisualElement : TreeView
         {
             t.makeItem = makeItem;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindMakeItem<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : TreeView
         {
             t.SetBinding(Properties.makeItem, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement ItemTemplate<TVisualElement>(this TVisualElement t, VisualTreeAsset itemTemplate) where TVisualElement : TreeView
         {
             t.itemTemplate = itemTemplate;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindItemTemplate<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : TreeView
         {
             t.SetBinding(Properties.itemTemplate, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindItem<TVisualElement>(this TVisualElement t, Action<VisualElement, Int32> bindItem) where TVisualElement : TreeView
         {
             t.bindItem = bindItem;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindBindItem<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : TreeView
         {
             t.SetBinding(Properties.bindItem, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement UnbindItem<TVisualElement>(this TVisualElement t, Action<VisualElement, Int32> unbindItem) where TVisualElement : TreeView
         {
             t.unbindItem = unbindItem;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindUnbindItem<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : TreeView
         {
             t.SetBinding(Properties.unbindItem, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement DestroyItem<TVisualElement>(this TVisualElement t, Action<VisualElement> destroyItem) where TVisualElement : TreeView
         {
             t.destroyItem = destroyItem;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindDestroyItem<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : TreeView
         {
             t.SetBinding(Properties.destroyItem, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement ItemExpandedChanged<TVisualElement>(this TVisualElement t, Action<TreeViewExpansionChangedArgs> itemExpandedChanged) where TVisualElement : TreeView
         {
             t.itemExpandedChanged += itemExpandedChanged;
-
+            
             return t;
         }
-
+        
         public static TVisualElement ItemsChosen<TVisualElement>(this TVisualElement t, Action<IEnumerable<System.Object>> itemsChosen) where TVisualElement : TreeView
         {
             t.itemsChosen += itemsChosen;
-
+            
             return t;
         }
-
+        
         public static TVisualElement SelectionChanged<TVisualElement>(this TVisualElement t, Action<IEnumerable<System.Object>> selectionChanged) where TVisualElement : TreeView
         {
             t.selectionChanged += selectionChanged;
-
+            
             return t;
         }
-
+        
         public static TVisualElement SelectedIndicesChanged<TVisualElement>(this TVisualElement t, Action<IEnumerable<Int32>> selectedIndicesChanged) where TVisualElement : TreeView
         {
             t.selectedIndicesChanged += selectedIndicesChanged;
-
+            
             return t;
         }
-
+        
         public static TVisualElement ItemIndexChanged<TVisualElement>(this TVisualElement t, Action<Int32, Int32> itemIndexChanged) where TVisualElement : TreeView
         {
             t.itemIndexChanged += itemIndexChanged;
-
+            
             return t;
         }
-
+        
         public static TVisualElement ItemsSourceChanged<TVisualElement>(this TVisualElement t, Action itemsSourceChanged) where TVisualElement : TreeView
         {
             t.itemsSourceChanged += itemsSourceChanged;
-
+            
             return t;
         }
-
+        
         public static TVisualElement CanStartDrag<TVisualElement>(this TVisualElement t, Func<CanStartDragArgs, Boolean> canStartDrag) where TVisualElement : TreeView
         {
             t.canStartDrag += canStartDrag;
-
+            
             return t;
         }
-
+        
         public static TVisualElement SetupDragAndDrop<TVisualElement>(this TVisualElement t, Func<SetupDragAndDropArgs, StartDragArgs> setupDragAndDrop) where TVisualElement : TreeView
         {
             t.setupDragAndDrop += setupDragAndDrop;
-
+            
             return t;
         }
-
+        
         public static TVisualElement DragAndDropUpdate<TVisualElement>(this TVisualElement t, Func<HandleDragAndDropArgs, DragVisualMode> dragAndDropUpdate) where TVisualElement : TreeView
         {
             t.dragAndDropUpdate += dragAndDropUpdate;
-
+            
             return t;
         }
-
+        
         public static TVisualElement HandleDrop<TVisualElement>(this TVisualElement t, Func<HandleDragAndDropArgs, DragVisualMode> handleDrop) where TVisualElement : TreeView
         {
             t.handleDrop += handleDrop;
-
+            
             return t;
         }
     }

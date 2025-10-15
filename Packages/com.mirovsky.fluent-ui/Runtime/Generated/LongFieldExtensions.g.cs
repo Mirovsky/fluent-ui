@@ -5,13 +5,27 @@ namespace FluentUI
     using System;
     using UnityEngine;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUILongFieldExtensions
     {
         public static TVisualElement ApplyInputDeviceDelta<TVisualElement>(this TVisualElement t, Vector3 delta, DeltaSpeed speed, Int64 startValue) where TVisualElement : LongField
         {
             t.ApplyInputDeviceDelta(delta, speed, startValue);
-
+            
+            return t;
+        }
+        
+        public static TVisualElement Value<TVisualElement>(this TVisualElement t, Int64 value) where TVisualElement : LongField
+        {
+            t.value = value;
+            
+            return t;
+        }
+        
+        public static TVisualElement BindValue<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : LongField
+        {
+            t.SetBinding(Properties.value, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
+            
             return t;
         }
     }

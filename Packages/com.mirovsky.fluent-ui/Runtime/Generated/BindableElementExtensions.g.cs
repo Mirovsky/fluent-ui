@@ -4,21 +4,21 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUIBindableElementExtensions
     {
-
+        
         public static TVisualElement Binding<TVisualElement>(this TVisualElement t, IBinding binding) where TVisualElement : BindableElement
         {
             t.binding = binding;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindingPath<TVisualElement>(this TVisualElement t, String bindingPath) where TVisualElement : BindableElement
         {
             t.bindingPath = bindingPath;
-
+            
             return t;
         }
     }

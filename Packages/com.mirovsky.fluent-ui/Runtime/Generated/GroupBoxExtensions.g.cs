@@ -4,21 +4,21 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUIGroupBoxExtensions
     {
-
+        
         public static TVisualElement Text<TVisualElement>(this TVisualElement t, String text) where TVisualElement : GroupBox
         {
             t.text = text;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindText<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : GroupBox
         {
             t.SetBinding(Properties.text, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
     }

@@ -14,10 +14,7 @@ It adds a set of **fluent-style extension methods** that make creating and confi
 - Supports runtime data bindings with simple API (`.BindProperty()` like `.BindText("Text")`)
 
 #### Cons
-- Since it's built on top of extensions, it can pollute Intelli Sense
-
-### TODO
-- Generator code is not perfect and some methods or fields might be missing, let me know what you think should be there
+- Since it's built on top of extensions, it can pollute IntelliSense
 
 ## Usage
 1. I recommend putting your UI code into special assembly to avoid polution whole project with the extension methos
@@ -83,3 +80,5 @@ Some more samples are available in project under `Assets/Fluent UI/Samples Windo
 Fluent UI isn’t yet available on any public UPM registry.  
 For now, you can install it manually by cloning or downloading the repository and copying the package to your Unity packages. Package is available in `Packages/com.mirovsky.fluent-ui-toolkit`.
 
+## TODO
+- Generator code is not perfect and some methods or fields might be missing, let me know what you think should be there

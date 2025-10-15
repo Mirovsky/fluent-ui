@@ -4,77 +4,77 @@ namespace FluentUI
 {
     using System;
     using UnityEngine.UIElements;
-
+    
     public static class FluentUITextElementExtensions
     {
-
+        
         public static TVisualElement Text<TVisualElement>(this TVisualElement t, String text) where TVisualElement : TextElement
         {
             t.text = text;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindText<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : TextElement
         {
             t.SetBinding(Properties.text, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement EnableRichText<TVisualElement>(this TVisualElement t, Boolean enableRichText) where TVisualElement : TextElement
         {
             t.enableRichText = enableRichText;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindEnableRichText<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : TextElement
         {
             t.SetBinding(Properties.enableRichText, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement EmojiFallbackSupport<TVisualElement>(this TVisualElement t, Boolean emojiFallbackSupport) where TVisualElement : TextElement
         {
             t.emojiFallbackSupport = emojiFallbackSupport;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindEmojiFallbackSupport<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : TextElement
         {
             t.SetBinding(Properties.emojiFallbackSupport, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement ParseEscapeSequences<TVisualElement>(this TVisualElement t, Boolean parseEscapeSequences) where TVisualElement : TextElement
         {
             t.parseEscapeSequences = parseEscapeSequences;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindParseEscapeSequences<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : TextElement
         {
             t.SetBinding(Properties.parseEscapeSequences, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
-
+        
         public static TVisualElement DisplayTooltipWhenElided<TVisualElement>(this TVisualElement t, Boolean displayTooltipWhenElided) where TVisualElement : TextElement
         {
             t.displayTooltipWhenElided = displayTooltipWhenElided;
-
+            
             return t;
         }
-
+        
         public static TVisualElement BindDisplayTooltipWhenElided<TVisualElement>(this TVisualElement t, String propertyName, object localDataSource = null, BindingMode bindingMode = BindingMode.ToTarget) where TVisualElement : TextElement
         {
             t.SetBinding(Properties.displayTooltipWhenElided, BindingsRepository.GetCachedOrCreateBinding(propertyName, localDataSource, bindingMode));
-
+            
             return t;
         }
     }

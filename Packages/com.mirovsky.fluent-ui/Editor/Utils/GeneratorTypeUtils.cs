@@ -11,22 +11,25 @@ namespace FluentUI.Generator
         public static IEnumerable<PropertyInfo> GetProperties(
             Type type,
             BindingFlags flags = BindingFlags.Instance | BindingFlags.Public
-        ) {
+        )
+        {
             var included = new List<PropertyInfo>();
 
-            var ownProps = type.GetProperties(flags | BindingFlags.DeclaredOnly);
-            foreach (var p in ownProps)
-            {
-                if (p.PropertyType.ContainsGenericParameters ||
-                    !p.CanWrite ||
-                    p.SetMethod == null ||
-                    !p.SetMethod.IsPublic)
-                {
-                    continue;
-                }
+            var closedType = FindFirstClosedGenericType(type);
+            var properties = type.GetProperties(flags);
 
-                if (p.GetCustomAttribute<ObsoleteAttribute>() != null)
-                {
+            foreach (var p in properties)
+            {
+                // Completely ignore it if it has `ObsoleteAttribute`
+				if (p.GetCustomAttribute<ObsoleteAttribute>() != null) {
+					continue;
+				}
+
+                if (p.PropertyType.ContainsGenericParameters ||
+                    p.SetMethod == null ||
+                    !p.CanWrite ||
+                    !p.SetMethod.IsPublic
+                ) {
                     continue;
                 }
 
@@ -39,55 +42,12 @@ namespace FluentUI.Generator
                     }
                 }
 
-                included.Add(p);
-            }
-
-            var overriddenBaseAccessors = new HashSet<MethodInfo>();
-            foreach (var p in included)
-            {
-                var set = p.SetMethod;
-                if (set == null)
-                {
-                    continue;
-                }
-
-                var baseDef = set.GetBaseDefinition();
-                if (baseDef != set)
-                {
-                    overriddenBaseAccessors.Add(baseDef);
-                }
-            }
-
-            foreach (var t in GetBaseTypes(type))
-            {
-                var baseDeclared = t.GetProperties(flags | BindingFlags.DeclaredOnly);
-                foreach (var bp in baseDeclared)
-                {
-                    if (!DirectlyTargetsOpenGenericBase(type, bp.DeclaringType))
-                    {
-                        continue;
-                    }
-
-                    if (!WasDeclaredWithDeclaringTypeGenerics(bp))
-                    {
-                        continue;
-                    }
-
-                    if (bp.PropertyType.ContainsGenericParameters ||
-                        !bp.CanWrite ||
-                        bp.SetMethod == null ||
-                        !bp.SetMethod.IsPublic)
-                    {
-                        continue;
-                    }
-
-                    var set = bp.SetMethod;
-                    if (set != null && (overriddenBaseAccessors.Contains(set) || IsOverrideMethod(set) || !set.IsPublic))
-                    {
-                        continue;
-                    }
-
-                    included.Add(bp);
+                // It's declared in this type
+                if (p.DeclaringType == type ||
+                    // It's a generic type and this class is closing the generic
+                    WasDeclaredWithDeclaringTypeGenerics(p) && closedType == type
+                ) {
+                    included.Add(p);
                 }
             }
 
@@ -286,18 +246,18 @@ namespace FluentUI.Generator
             return method.GetBaseDefinition().DeclaringType != method.DeclaringType;
         }
 
-        private static bool DirectlyTargetsOpenGenericBase(Type type, Type openGenericBase)
+        private static Type FindFirstClosedGenericType(Type type)
         {
-            var openGeneric = openGenericBase.IsGenericType ? openGenericBase.GetGenericTypeDefinition() : openGenericBase;
-            if (!openGeneric.IsGenericTypeDefinition)
+            for (var cur = type; cur?.BaseType != null; cur = cur.BaseType)
             {
-                return false;
+                var baseType = cur.BaseType!;
+                if (baseType.IsGenericType && !baseType.ContainsGenericParameters)
+                {
+                    return cur;
+                }
             }
 
-            var b = type.BaseType;
-            return b is not null
-                   && b.IsGenericType
-                   && b.GetGenericTypeDefinition() == openGeneric;
+            return null;
         }
 
         private static bool HasNestedGenerics(Type type)
