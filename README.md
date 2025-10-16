@@ -10,7 +10,7 @@ It adds a set of **fluent-style extension methods** that make creating and confi
 #### Pros
 - Fluent, chainable API for building UI with UI Toolkit
 - *Should have* no runtime overhead — purely syntactic sugar
-- Developed on Unity 6000.1.1f1, but can be generated on other versions
+- Developed on Unity 6000.0.60f1, but can be generated on other versions
 - Supports runtime data bindings with simple API (`.BindProperty()` like `.BindText("Text")`)
 
 #### Cons
@@ -76,9 +76,10 @@ Some more samples are available in project under `Assets/Fluent UI/Samples Windo
 ![Examples](images/SamplesWindow.png)
 
 ## 📦 Installation
+Use `Install from git URL` in Package Manager with this url: `https://github.com/Mirovsky/fluent-ui.git?path=/Packages/com.mirovsky.fluent-ui`
 
-Fluent UI isn’t yet available on any public UPM registry.  
-For now, you can install it manually by cloning or downloading the repository and copying the package to your Unity packages. Package is available in `Packages/com.mirovsky.fluent-ui-toolkit`.
 
 ## TODO
 - Generator code is not perfect and some methods or fields might be missing, let me know what you think should be there
+- Generate extensions for Unity Editor assembly and have them conditionaly compiled / in editor only assembly
+- Figure out how to support multiple versions of Unity Engine, newer things above 6000.0.60f1 are missing (6000.0 LTS)

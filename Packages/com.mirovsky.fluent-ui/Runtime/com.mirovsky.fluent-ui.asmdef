@@ -1,10 +1,8 @@
 {
-    "name": "FluentUI.Editor",
-    "rootNamespace": "FluentUI.Editor",
+    "name": "com.mirovsky.fluent-ui",
+    "rootNamespace": "FluentUI",
     "references": [],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
