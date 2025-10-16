@@ -73,7 +73,7 @@ root.Children(
 
 Some more samples are available in project under `Assets/Fluent UI/Samples Window`.
 
-![Examples](images/SamplesWindow.png)
+![Examples](GithubSources/Images/SamplesWindow.png)
 
 ## 📦 Installation
 Use `Install from git URL` in Package Manager with this url: `https://github.com/Mirovsky/fluent-ui.git?path=/Packages/com.mirovsky.fluent-ui`
