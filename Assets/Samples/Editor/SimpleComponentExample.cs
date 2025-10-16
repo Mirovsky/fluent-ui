@@ -2,7 +2,7 @@
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
-namespace Samples.Editor
+namespace FluentUI.Samples.Editor
 {
     public class SimpleComponentExample : VisualElement
     {

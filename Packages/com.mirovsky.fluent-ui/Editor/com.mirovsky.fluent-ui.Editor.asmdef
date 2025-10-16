@@ -1,9 +1,7 @@
 {
-    "name": "FluentUIEditorSamples",
-    "rootNamespace": "",
-    "references": [
-        "GUID:4f76f464792a1ad4999743c1ea47fb4b"
-    ],
+    "name": "com.mirovsky.fluent-ui.Editor",
+    "rootNamespace": "FluentUI.Editor",
+    "references": [],
     "includePlatforms": [
         "Editor"
     ],
@@ -11,7 +9,7 @@
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
-    "autoReferenced": true,
+    "autoReferenced": false,
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false

@@ -1,9 +1,8 @@
-﻿using FluentUI;
-using Unity.Properties;
+﻿using Unity.Properties;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Samples.Editor
+namespace FluentUI.Samples.Editor
 {
     public class DataBindingsExample : VisualElement
     {

@@ -3,12 +3,24 @@
   "version": "0.1.0",
   "displayName": "Fluent UI",
   "description": "Fluent API for Unitys UI Toolkit",
-  "unity": "6000.1",
-  "unityRelease": "1f1",
-  "documentationUrl": "https://github.com/Mirovsky/fluent-ui-toolkit/",
-  "licensesUrl": "https://github.com/Mirovsky/fluent-ui-toolkit/blob/main/LICENSE",
+  "unity": "6000.0",
+  "unityRelease": "60f1",
+  "licensesUrl": "https://github.com/Mirovsky/fluent-ui/blob/main/LICENSE",
+  "changelogUrl": "https://github.com/Mirovsky/fluent-ui/blob/main/CHANGELOG.md",
   "author": {
     "name": "Jakub Mirovsky"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "samples": [
+    {
+      "displayName": "Editor Samples",
+      "description": "A collection of samples for Editor extensions",
+      "path": "Samples~/Editor"
+    },
+    {
+      "displayName": "Runtime Samples",
+      "description": "A collection of samples for Runtime usage",
+      "path": "Samples~/Runtime"
+    }
+  ]
 }
