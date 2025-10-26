@@ -4,6 +4,8 @@ public static partial class Templates
 {
     public const string BindingsCacheTemplate =
         """
+        #nullable enable
+        
         internal static class BindingsRepository
         {
             private static readonly System.Collections.Generic.Dictionary<int, UnityEngine.UIElements.DataBinding> s_bindingsCache = new();

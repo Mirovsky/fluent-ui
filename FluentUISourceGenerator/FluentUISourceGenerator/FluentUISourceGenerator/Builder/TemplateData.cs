@@ -19,7 +19,8 @@ public readonly struct ClassData(
     string classPrefix,
     string className,
     string classPostfix,
-    string content
+    string content,
+    string customContent = ""
 ) : ITemplateData
 {
     public Dictionary<string, string> ToDictionary() =>
@@ -29,7 +30,8 @@ public readonly struct ClassData(
             ["CLASS_PREFIX"] = classPrefix,
             ["CLASS_NAME"] = className,
             ["CLASS_POSTFIX"] = classPostfix,
-            ["CONTENT"] = content
+            ["CONTENT"] = content,
+            ["CUSTOM_CONTENT"] = customContent,
         };
 }
 

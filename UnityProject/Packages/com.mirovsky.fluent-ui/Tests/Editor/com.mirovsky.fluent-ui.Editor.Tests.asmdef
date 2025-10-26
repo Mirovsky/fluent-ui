@@ -2,7 +2,7 @@
     "name": "com.mirovsky.fluent-ui.Tests",
     "rootNamespace": "FluentUI.Editor.Tests",
     "references": [
-        "GUID:a3d607e56754cbe4c8dd2bf66996dec8"
+        "GUID:4f76f464792a1ad4999743c1ea47fb4b"
     ],
     "includePlatforms": [
         "Editor"

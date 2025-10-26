@@ -21,6 +21,23 @@ public static class ClassSourceTextGenerator
         return SourceText.From(content, Encoding.UTF8);
     }
 
+    public static SourceText CreateSourceTextForCustomClass(string templateName)
+    {
+        var classData = new ClassData(
+            "FluentUI",
+            "FluentUI",
+            templateName,
+            "Extensions",
+            "",
+            CustomTemplates.GetCustomData(templateName)
+        );
+
+        return SourceText.From(
+            BuilderUtils.Format(Templates.ClassTemplate.Render(classData)),
+            Encoding.UTF8
+        );
+    }
+
     private static string CreateStringFromBuilder(INamedTypeSymbol type, bool createBindings)
     {
         var methods = BuilderUtils.GetAllMethods(type).ToArray();
@@ -60,7 +77,8 @@ public static class ClassSourceTextGenerator
             "FluentUI",
             type.Name,
             "Extensions",
-            string.Join("\n", renderedMethods)
+            string.Join("\n", renderedMethods),
+            CustomTemplates.GetCustomData(type.Name)
         );
 
         return Templates.ClassTemplate.Render(classData);

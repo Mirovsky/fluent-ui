@@ -118,6 +118,8 @@ public class FluentUISourceGenerator : IIncrementalGenerator
 
             spc.AddSource($"FluentUI{t.Name}Extensions.g.cs", source);
         }
+
+        spc.AddSource($"FluentUINotifyValueChangedExtensions.g.cs", ClassSourceTextGenerator.CreateSourceTextForCustomClass("INotifyValueChanged"));
     }
 
     private static void RegisterPropertiesOutput(SourceProductionContext spc, (ImmutableArray<IPropertySymbol>, ImmutableArray<IPropertySymbol>) properties)
