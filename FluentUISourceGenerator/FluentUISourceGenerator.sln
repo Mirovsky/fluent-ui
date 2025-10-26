@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentUISourceGenerator", "FluentUISourceGenerator\FluentUISourceGenerator\FluentUISourceGenerator.csproj", "{F5444D0B-4222-4E47-A27E-2920EDC9B3C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentUISourceGenerator.Tests", "FluentUISourceGenerator\FluentUISourceGenerator.Tests\FluentUISourceGenerator.Tests.csproj", "{D5E72014-D9BC-403C-B2BC-95E07B2BD9FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5444D0B-4222-4E47-A27E-2920EDC9B3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5444D0B-4222-4E47-A27E-2920EDC9B3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5444D0B-4222-4E47-A27E-2920EDC9B3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5444D0B-4222-4E47-A27E-2920EDC9B3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E72014-D9BC-403C-B2BC-95E07B2BD9FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E72014-D9BC-403C-B2BC-95E07B2BD9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E72014-D9BC-403C-B2BC-95E07B2BD9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E72014-D9BC-403C-B2BC-95E07B2BD9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+{
+    "name": "com.mirovsky.fluent-ui",
+    "rootNamespace": "FluentUI",
+    "references": [
+        "GUID:c5a6ab5c0546c9742b2bfec3da8ebde2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
