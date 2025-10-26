@@ -17,9 +17,8 @@ It adds a set of **fluent-style extension methods** that make creating and confi
 - Since it's built on top of extensions, it can pollute IntelliSense
 
 ## Usage
-1. I recommend putting your UI code into special assembly to avoid polution whole project with the extension methos
+1. I recommend putting your UI code into special assembly to avoid polution whole project with the extension methods
 2. Put `using FluentUI` at the top of you file and it should work
-3. If you are on a older/newer Unity version, you can generate extensions yourself in `Assets/Fluent UI/Generate Extension Methods`
 
 ## Examples
 
@@ -71,15 +70,13 @@ root.Children(
     );
 ```
 
-Some more samples are available in project under `Assets/Fluent UI/Samples Window`.
+Some more samples are available in project under `UnityProjects/Assets/Fluent UI/Samples Window`.
 
 ![Examples](GithubSources/Images/SamplesWindow.png)
 
-## 📦 Installation
-Use `Install from git URL` in Package Manager with this url: `https://github.com/Mirovsky/fluent-ui.git?path=/Packages/com.mirovsky.fluent-ui`
-
+## Installation
+Use `Install from git URL` in Package Manager with this url: `https://github.com/Mirovsky/fluent-ui.git?path=/UnityProject/Packages/com.mirovsky.fluent-ui`
 
 ## TODO
 - Generator code is not perfect and some methods or fields might be missing, let me know what you think should be there
 - Generate extensions for Unity Editor assembly and have them conditionaly compiled / in editor only assembly
-- Figure out how to support multiple versions of Unity Engine, newer things above 6000.0.60f1 are missing (6000.0 LTS)

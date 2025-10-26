@@ -1,0 +1,23 @@
+{
+    "name": "com.mirovsky.fluent-ui.Samples.Runtime.Localization",
+    "rootNamespace": "FluentUI.Samples.Localization",
+    "references": [
+        "GUID:4f76f464792a1ad4999743c1ea47fb4b",
+        "GUID:eec0964c48f6f4e40bc3ec2257ccf8c5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.localization",
+            "expression": "1.5.0",
+            "define": "LOCALIZATION"
+        }
+    ],
+    "noEngineReferences": false
+}
