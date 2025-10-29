@@ -11,6 +11,7 @@ public static partial  class Templates
         namespace {NAMESPACE} {
             internal static class {CLASS_PREFIX}{CLASS_NAME}{CLASS_POSTFIX} {
         {CONTENT}
+        
         {CUSTOM_CONTENT}
             }
         }
