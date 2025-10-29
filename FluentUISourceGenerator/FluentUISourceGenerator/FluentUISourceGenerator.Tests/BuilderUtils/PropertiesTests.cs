@@ -1,11 +1,11 @@
-﻿namespace FluentUISourceGenerator.Tests;
+﻿namespace FluentUISourceGenerator.Tests.BuilderUtils;
 
 using System.IO;
 using System.Linq;
-using Utils;
 using Xunit;
+using Utils;
 
-public class BuilderUtilsTests
+public class PropertiesTests
 {
     [Fact]
     public void GetAllProperties_Basic()

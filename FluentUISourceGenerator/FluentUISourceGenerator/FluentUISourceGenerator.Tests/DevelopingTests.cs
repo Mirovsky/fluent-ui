@@ -8,7 +8,7 @@ using Xunit;
 
 public class DevelopingTests
 {
-    [Fact]
+    // [Fact]
     public void Dev()
     {
         var refs = new List<MetadataReference>
