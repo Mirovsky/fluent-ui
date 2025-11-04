@@ -27,19 +27,20 @@ namespace FluentUI.Samples.Editor
                         .BindStyleFontSize(nameof(_fontSize))
                         .BindStyleColor(nameof(_color)),
                     new VisualElement()
-                        .StyleFlexDirection(FlexDirection.Row)
-                        .StyleWidth(Length.Percent(100))
-                        .StyleJustifyContent(Justify.SpaceBetween)
+                        .Style(static style => style
+                            .FlexDirection(FlexDirection.Row)
+                            .Width(Length.Percent(100))
+                            .JustifyContent(Justify.SpaceBetween))
                         .Children(
                             new Button(() => _fontSize++)
                                 .Text("Increase Size")
-                                .StyleFlexGrow(1),
+                                .Style(static style => style.FlexGrow(1)),
                             new Button(() => _fontSize--)
                                 .Text("Decrease Size")
-                                .StyleFlexGrow(1),
+                                .Style(static style => style.FlexGrow(1)),
                             new Button(() => _color = new Color(Random.value, Random.value, Random.value))
                                 .Text("Randomize Color")
-                                .StyleFlexGrow(1)
+                                .Style(static style => style.FlexGrow(1))
                         )
                 );
         }

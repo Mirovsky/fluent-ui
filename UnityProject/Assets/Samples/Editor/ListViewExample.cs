@@ -15,7 +15,7 @@ namespace FluentUI.Samples.Editor
                     new ListView(_items)
                         .MakeItem(() => new Label())
                         .BindItem((element, i) => ((Label)element).Text(_items[i]))
-                        .StyleHeight(400)
+                        .Style(static style => style.Height(400))
                 );
         }
     }

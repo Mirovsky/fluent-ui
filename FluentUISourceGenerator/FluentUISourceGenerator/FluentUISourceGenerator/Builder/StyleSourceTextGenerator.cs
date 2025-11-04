@@ -23,14 +23,12 @@ public static class StyleSourceTextGenerator
                 .Select(p => PropertyData.FromSymbol(style, p))
                 .Select(p => Templates.MethodForPropertyTemplate.Render(p)))
             .Concat(properties
-                .Select(PropertyData.FromStyleSymbol)
-                .Select(s => Templates.MethodForStylePropertyTemplate.Render(s)))
-            .Concat(properties
                 .Select(PropertyData.FromBindStyleSymbol)
                 .Select(p => Templates.GenericBindMethodForPropertyTemplate.Render(p)))
             .Concat(properties
                 .Select(PropertyData.FromBindStyleSymbol)
-                .Select(p => Templates.BindMethodForPropertyTemplate.Render(p)));
+                .Select(p => Templates.BindMethodForPropertyTemplate.Render(p)))
+            .Concat([Templates.MethodForStylePropertyTemplate]);
 
         var classData = new ClassData(
             "FluentUI",
