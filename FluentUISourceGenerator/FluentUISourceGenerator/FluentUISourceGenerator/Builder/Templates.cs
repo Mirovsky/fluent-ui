@@ -70,9 +70,9 @@ public static partial  class Templates
 
     public const string MethodForStylePropertyTemplate =
         """
-        public static {T_NAME} Style{METHOD_NAME}<{GENERIC_ARGUMENTS}>(this {T_NAME} t, {PROPERTY_TYPE} {PROPERTY_NAME}) {METHOD_CONSTRAINTS} {
+        public static TVisualElement Style<TVisualElement>(this TVisualElement t, System.Action<UnityEngine.UIElements.IStyle> styleAction) where TVisualElement : UnityEngine.UIElements.VisualElement {
 
-            t.style.{PROPERTY_NAME} = {PROPERTY_NAME};
+            styleAction(t.style);
 
             return t;
         }

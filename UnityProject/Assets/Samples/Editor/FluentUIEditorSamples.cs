@@ -17,10 +17,11 @@ namespace FluentUI.Samples.Editor
             rootVisualElement
                 .Children(
                     new Label("Fluent UI Samples")
-                        .StyleFontSize(24)
-                        .StyleUnityFontStyleAndWeight(FontStyle.Bold)
-                        .StyleWidth(Length.Percent(100))
-                        .StyleUnityTextAlign(TextAnchor.MiddleCenter),
+                        .Style(static style => style
+                            .FontSize(24)
+                            .UnityFontStyleAndWeight(FontStyle.Bold)
+                            .Width(Length.Percent(100))
+                            .UnityTextAlign(TextAnchor.MiddleCenter)),
                     new TabView()
                         .Children(
                             new Tab("Simple Component")
