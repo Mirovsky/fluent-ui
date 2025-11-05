@@ -21,6 +21,13 @@ public static class NamingUtils
         return "style" + FirstCharToUpper(name.Replace("Property", ""));
     }
 
+    public static string CreateSimpleName(IEventSymbol symbol)
+    {
+        return symbol.ExplicitInterfaceImplementations.Length > 0
+            ? symbol.ExplicitInterfaceImplementations[0].Name
+            : symbol.Name;
+    }
+
     private static string FirstCharToUpper(this string input) =>
         input switch
         {

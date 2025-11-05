@@ -46,6 +46,7 @@ public static class BuilderUtils
     {
         return GetEvents(type)
             .Where(e => e.IsStatic == false &&
+                        e.ExplicitInterfaceImplementations.Length == 0 &&
                         e.AddMethod != null &&
                         TypeUtils.HasObsoleteAttribute(e) == false
             );
