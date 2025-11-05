@@ -20,6 +20,9 @@ It adds a set of **fluent-style extension methods** that make creating and confi
 1. I recommend putting your UI code into special assembly to avoid polution whole project with the extension methods
 2. Put `using FluentUI` at the top of you file and it should work
 
+## Known Issues
+- Explicit event implementations are ignored and not generated for interface (ITextSelection for example)
+
 ## Examples
 
 Instead of writing verbose, object-oriented UI setup code:
@@ -39,7 +42,7 @@ root.Children(
     new Label()
         .Classes("header")
         .Text("Hello World)
-        .StyleUnityTextAlign(TextAnchor.MiddleCenter)
+        .Style(static style => style.UnityTextAlign(TextAnchor.MiddleCenter))
 )
 ```
 

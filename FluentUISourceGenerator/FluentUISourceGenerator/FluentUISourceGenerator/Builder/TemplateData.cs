@@ -139,11 +139,11 @@ public readonly struct EventData(
 
     public static EventData FromSymbol(INamedTypeSymbol type, IEventSymbol s) => new(
         tName: NamingUtils.CreateTName(type),
-        methodName: NamingUtils.CreateFluentName(s.Name),
+        methodName: NamingUtils.CreateFluentName(NamingUtils.CreateSimpleName(s)),
         generics: TemplateUtils.CreateGenericsForSymbol(type, s),
         constraints: TemplateUtils.CreateConstraintsForSymbol(type),
         eventType: s.Type.ToDisplayString(),
-        eventName: s.Name
+        eventName: NamingUtils.CreateSimpleName(s)
     );
 }
 
